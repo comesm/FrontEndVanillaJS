@@ -1,0 +1,42 @@
+#calculator {
+  width: 200px;
+  background-color: #999;
+  border: 1px solid black;
+  margin: auto;
+}
+
+#display {
+  width: 180px;
+  margin: 5px auto;
+  padding: 5px;
+  text-align: right;
+  border: 1px solid black;
+  background-color: white;
+}
+
+#keyboard {
+  padding: 2px;
+}
+
+#keyboard div {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 2px;
+  border: 1px solid black;
+  background-color: #ddd;
+}
+
+#equals {
+  background-color: green !important;
+}
+
+.operator {
+  background-color: orange !important;
+}
+
+#clear {
+  background-color: red !important;
+}
