@@ -11,7 +11,17 @@ table.addEventListener('click', function(event) {
     let val = parseInt(event.target.innerHTML) ||
       event.target.innerHTML;
     if(val === '=') {
-      console.log('11', calcQ);
+      var total = 0;
+      var lastNum = calcQ[0];
+      for (var i = 1; i < calcQ.length; i++) {
+        if(Number.isInteger(calcQ[i])) {
+          total = calcQ[0];
+        }
+
+      }
+
+
+      updateScreen(total);
       //calculate
     }
     else {
@@ -20,6 +30,7 @@ table.addEventListener('click', function(event) {
       } else {
         calcQ.push(currNum);
         currNum = null;
+        if(calcQ.length !== 0 && Number.isInteger(calcQ[calcQ.length - 1])
         calcQ.push(val);
       }
       console.log('19', currNum);

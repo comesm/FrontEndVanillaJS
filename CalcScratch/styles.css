@@ -1,0 +1,29 @@
+
+.container {
+
+}
+
+.calcBody {
+  text-align: center;
+  width: 120px;
+  border: solid 1px;
+  margin: auto;
+  background-color: gray;
+}
+
+.screen {
+  text-align: right;
+  border: solid 1px;
+  margin: 4px;
+  padding-right: 5px;
+  background-color: white;
+}
+
+.button {
+  width: 30px;
+  display: inline-block;
+  border: solid 1px;
+  margin: 1px;
+  background-color: yellow;
+}
+
