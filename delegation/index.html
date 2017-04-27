@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delegation FAQ</title>
+</head>
+<body>
+<div id='container'>
+  <ul id='list'>
+    <li><a href='http://www.drudgereport.com'>Item 1</a></li>
+    <li><a href='it2'>Item 2</a></li>
+    <li><a href='it3'>Item 3</a></li>
+    <li><a href='it4'>Item 4</a></li>
+  </ul>
+
+  <!--
+    Any time an anchor tag is clicked, a click event is fired
+    for that anchor and then bubbles up the DOM tree, trigger
+    ing each of its parent click event handlers
+  -->
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script>
+    $('#list').on('click', 'a', event => {
+      console.log(this);
+      const elem = event.target;
+      if(elem.is("[href^='http']")) {
+        console.log('30')
+        elem.attr("target", "_blank");
+      }
+    });
+  //event listener
+    // $('#list a ').on('click', () => {
+    //   event.preventDefault();
+    //   console.log('23', event.target);
+    // });
+
+  //create a delegated event - dynamically attaches to new DOM elements
+ $('#list').on('click', 'a', event => {event.preventDefault(); console.log(event)})
+
+    //listen on html element for events
+    $('html').on('click', event => console.log('32', event.target));
+
+  </script>
+</body>
+</html>
