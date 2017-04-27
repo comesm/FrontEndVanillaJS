@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<input type="button" name="michael" value="Clicker Me">
+<button id='thebutton'>Click this button</button>
+
+<script>
+//constructor this
+  function BigComputer(answer) {
+    this.theAnswer = answer;
+    this.askQuestion = function() {
+      console.log(this);
+      return this.theAnswer;
+    }
+  }
+
+
+ // var dt = new BigComputer(33);
+ //   theButton = document.getElementById('thebutton');
+ //   thebutton.onclick = dt.askQuestion;
+
+function addhandler() {
+  console.log('25');
+  var dt = new BigComputer(33);
+  theButton = document.getElementById('thebutton');
+  theButton.onclick = dt.askQuestion;
+  console.log(theButton);
+}xs
+
+window.onload = addhandler;
+
+
+//   var bc = new BigComputer('lala');
+//   var dt = bc.askQuestion();
+//   console.log('20', dt);
+
+//   function testingThisAgain() {
+//     console.log(this);
+//   }
+
+// function handleThisClick() {
+//   console.log('28', this);
+// }
+
+// document.getElementById('thebutton').onclick = handleThisClick;
+
+
+//left of the dot, this
+var deepThought = {
+  answer: 42,
+  askQuestion: function() {
+    console.log('13', this);
+    return this.answer;
+  }
+};
+
+console.log(deepThought.askQuestion());
+
+
+
+  function firstThis() {
+    console.log('12', this);
+
+    function thisTwo() {
+      console.log('15', this);
+      function thisThree() {
+        console.log('17', this);
+      }
+      thisThree();
+    }
+    thisTwo();
+  }
+
+  //firstThis();
+
+  function async(i, func, callback) {
+  var index = 0;
+  var done = false;
+  var loop = {
+
+    next: function() {
+      if(done) {
+        return;
+      }
+      if(index < i) {
+        index++;
+        func(loop);
+      }
+      else {
+        done = true;
+        callback();
+      }
+    },
+
+    iteration: function() {
+      return index - 1;
+    },
+
+    break: function() {
+      done = true;
+      callback();
+    }
+
+  };
+  loop.next();
+  return loop;
+
+};
+
+var btn = document.querySelector('input');
+
+// btn.click(function() {console.log('heard')});
+
+
+</script>
+</body>
+</html>
