@@ -83,4 +83,155 @@ var mike, jim, bob
 console.log(mike);
 
 
+var a, b, rest;
+
+[a,b] = [10, 20];
+
+[a,b, ...rest] = [10,20, 30, 40, 50];
+
+console.log(a,b, rest);
+
+let {a: c, b: j} = {a: 10, b: 30};
+
+console.log(22, c);
+
+let {ab, bc} = {b: 10, bc: 20};
+
+console.log(100, ab);
+
+var x = [19,2,3,4,5];
+
+var [y, ...z] = x;
+
+console.log(z);
+
+var foo = [1,2,3,4];
+var [one, two, three, four] = foo;
+
+console.log(one);
+
+//assignemnt separate from declaration
+
+ //var a, b;
+ [a,b] = [1211,2]
+console.log(117, a);
+[a=5, b=7] = [132, 44];
+console.log(a, b);
+
+const f = () => [1,2,3];
+
+let [ad, , bd] = f();
+
+
+[,,] = f();
+
+var [a, ...b] = [1,2,3];
+
+console.log(b);
+
+//objects
+
+var o = {p: 42, q: true};
+
+var {p, q} = o;
+
+console.log(p, q);
+
+var a, b
+
+//need parents as {a, b} is considered
+  //function block and not object literal
+({a, b} = {a: 123, b: 321});
+
+console.log(a, b);
+
+
+function reverse(array, begin = 0, end = array.length - 1) {
+  let temp;
+  //console.log(begin, end);
+  while(begin < end) {
+  // console.log(array);
+    temp = array[begin];
+    array[begin++] = array[end];
+    array[end--] = temp;
+    //console.log(157, array);
+  }
+  //console.log(array.join(''));
+}
+
+//reverse('mike'.split(''));
+
+let strArray = 'Michael is a cool guy'.split('');
+console.log(strArray);
+
+function reverseStringArray(array) {
+
+
+  for (var i = 0, j = array.length - 1; i < j; i++, j--) {
+
+
+  }
+
+}
+
+//console.log(reverseStringStack(strArray));
+
+
+function reverseStringStack(array) {
+  var stack = [];
+  let word;
+  array.forEach(val => {
+    word = word || '';
+    console.log(185, word);
+    if(val === ' ') {
+      console.log(187, word);
+      let space = stack.length === 0 ? '' : ' ';
+      stack.unshift(...word.split('') + space);
+      word = null;
+    } else {
+      word += val;
+    }
+    //console.log(...stack);
+
+
+    });
+  console.log(192, stack);
+  return stack;
+}
+
+// function newArrStack(array) {
+//   let arr = new Array(array.length);
+//   for (var i = array.length - 1; i >= 0; i--) {
+
+//   }
+
+// }
+
+function reverse1(arr) {
+  reverseChars(arr);
+
+}
+
+function reverseChars1(array, start = 0, end = array.length - 1) {
+  console.log(start, end);
+
+
+}
+
+console.log(reverse('Mike'.split('')));
+
+console.log(reverseChars1([], 3,4));
+
+
+
+//can parse data returned from functions
+
+
+
+
+
+
+
+
+
 
