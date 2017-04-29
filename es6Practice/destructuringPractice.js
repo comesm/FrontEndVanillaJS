@@ -218,11 +218,48 @@ function reverseChars1(array, start = 0, end = array.length - 1) {
 
 }
 
-console.log(reverse('Mike'.split('')));
+// console.log(reverse('Mike'.split('')));
 
-console.log(reverseChars1([], 3,4));
+// console.log(reverseChars1([], 3,4));
 
 
+function reverseWords(array) {
+  //console.log(227, array);
+  reverse(array, 0, array.length - 1);
+  //console.log('229', array);
+  let start;
+  let end;
+  array.forEach((val, i) => {
+
+    if(i === 0 || array[i - 1] === ' ') {
+      start = i;
+    }
+
+    if(array[i + 1] === ' ' || i + 1 === array.length) {
+      end = i;
+      reverse(array, start, end);
+    }
+
+
+
+  });
+  //console.log(224, array);
+  return array;
+
+}
+
+function reverse(array, start, end) {
+
+  while(start < end) {
+    let temp = array[start];
+    array[start++] = array[end];
+    array[end--] = temp;
+  }
+}
+
+var strArray1 = 'a is a word';
+
+console.log(reverseWords(strArray1.split('')));
 
 //can parse data returned from functions
 
